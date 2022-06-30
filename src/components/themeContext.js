@@ -16,8 +16,16 @@ function ThemeContextProvider(props) {
     }
   }, []);
 
+  const handleRemove = (movie) => {
+    setMovies((prevStat) => {
+      return prevStat.filter(movi => movi.id !== movie.id)
+    });
+  };
   const handleAdd = (movie) => {
-    setMovies((prevStat) => [...prevStat, movie]);
+    setMovies((prevStat) => {
+      const isExist =  prevStat.find(movi => movie.id === movi.id)
+      return isExist ? prevStat : [...prevStat, movie]
+    });
   };
   useEffect(() => {
     window.localStorage.setItem("items", JSON.stringify(movies));
@@ -25,7 +33,7 @@ function ThemeContextProvider(props) {
 
   console.log(movies);
   return (
-    <Provider value={{ page, togglePage, handleAdd, movies }}>
+    <Provider value={{ page, togglePage, handleAdd, handleRemove, movies }}>
       {props.children}
     </Provider>
   );

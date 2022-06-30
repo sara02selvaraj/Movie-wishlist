@@ -13,7 +13,7 @@ function Wishlist() {
             {context.movies.length > 0 ? (
               <React.Fragment>
                 {context.movies.map((movie) => (
-                  <MovieContainer key={movie.id} movie={movie} />
+                  <MovieContainer key={movie.id} movie={movie} handleRemove ={context.handleRemove} />
                 ))}
               </React.Fragment>
             ) : (

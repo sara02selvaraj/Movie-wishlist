@@ -165,17 +165,18 @@ form > input[type = submit]:hover {
 .movie-info #star {
  color:#FEC654 ;
 }
+
 .action-btn {
   border: none;
   outline: none;
   background-color: var(--clr-primary);
   cursor: pointer;
+  padding-top:0;
+  display: flex;
+  justify-content: center;
 }
 .action-btn:hover, .action-btn:focus{
   color: var(--clr-accent);
-}
-.action-btn .fa{
-  margin-right: 0.35em;
 }
 .empty {
   text-align: center;
@@ -193,6 +194,7 @@ form > input[type = submit]:hover {
 }
 .icon {
   margin-right:0.5em;
+  font-size: 1em;
 }
 .dark-text a:hover, .dark-text a:focus{
   color: var(--clr-accent);

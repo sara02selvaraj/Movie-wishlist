@@ -1,7 +1,7 @@
 import React from 'react'
-import {BiPlusCircle} from 'react-icons/bi'
+import {BiPlusCircle, BiMinusCircle} from 'react-icons/bi'
 
-function MovieContainer({movie, watchList,handleAdd}) {
+function MovieContainer({movie, watchList,handleAdd, handleRemove}) {
 
     return (
         <React.Fragment>
@@ -14,7 +14,8 @@ function MovieContainer({movie, watchList,handleAdd}) {
                    <div className="movie-details">
                        <p>RELEASE DATE: {movie.release_date}</p>
                        <p>RATING: {movie.vote_average}</p>
-                       {watchList && <p><button className="action-btn" onClick={() => handleAdd(movie)} id="watchlist-btn"><BiPlusCircle className='icon'/>WatchList</button></p>}
+                       {watchList ? <p className="btn"><button className="action-btn" onClick={() => handleAdd(movie)} ><BiPlusCircle className='icon'/>WatchList</button></p> : 
+                       <p className="btn"><button className="action-btn" onClick={() => handleRemove(movie)} ><BiMinusCircle className='icon'/>Remove</button></p>}
                    </div>
                    <p className="plot">{movie.overview}</p>
                </div>

@@ -28,7 +28,6 @@ function ThemeContextProvider(props) {
   const handleAdd = (movie) => {
     setMovies((prevStat) => {
       const isExist =  prevStat.find(movi => movie.id === movi.id)
-      // return isExist ? prevStat : [...prevStat, movie]
       if(isExist) {
         toast.error('Already in Watchlist!', {
           position: "top-right",
@@ -45,19 +44,17 @@ function ThemeContextProvider(props) {
         })
         return [...prevStat, movie]
       }
-    });
-    
-  };
+    })
+  }
+  
   useEffect(() => {
     window.localStorage.setItem("items", JSON.stringify(movies))
   }, [movies])
-
-  console.log(movies)
   return (
     <Provider value={{ page, togglePage, handleAdd, handleRemove, movies }}>
       {props.children}
     </Provider>
-  );
+  )
 }
 
 export { ThemeContextProvider, Consumer as ThemeContextConsumer }

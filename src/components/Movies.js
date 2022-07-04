@@ -1,24 +1,24 @@
-import React, { useState } from "react";
-import { FaFilm } from "react-icons/fa";
-import MovieContainer from "./MovieContainer";
-import { ThemeContextConsumer } from "./themeContext";
+import React, { useState } from "react"
+import { FaFilm } from "react-icons/fa"
+import MovieContainer from "./MovieContainer"
+import { ThemeContextConsumer } from "../themeContext"
 
 function Movies() {
-  const [title, setTitle] = useState("");
-  const [moviesData, setMoviesData] = useState([]);
+  const [title, setTitle] = useState("")
+  const [moviesData, setMoviesData] = useState([])
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=e72f91918c6261aea8263a6dba96c6ac&language=en-US&query=${title}&page=1&include_adult=false`;
+    e.preventDefault()
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=e72f91918c6261aea8263a6dba96c6ac&language=en-US&query=${title}&page=1&include_adult=false`
     try {
-      const res = await fetch(url);
-      const data = await res.json();
-      setMoviesData(data.results);
-      setTitle("");
+      const res = await fetch(url)
+      const data = await res.json()
+      setMoviesData(data.results)
+      setTitle("")
     } catch (err) {
-      console.error(err);
+      console.error(err)
     }
-  };
+  }
 
   return (
     <React.Fragment>
@@ -58,7 +58,7 @@ function Movies() {
           </React.Fragment>
         ) : (
           <React.Fragment>
-            <div class="empty movie">
+            <div className="empty movie">
               <h2>
                 <FaFilm />
               </h2>
@@ -68,7 +68,7 @@ function Movies() {
         )}
       </div>
     </React.Fragment>
-  );
+  )
 }
 
-export default Movies;
+export default Movies

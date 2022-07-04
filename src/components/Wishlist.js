@@ -1,8 +1,8 @@
-import React from "react";
-import { BiPlusCircle } from "react-icons/bi";
-import { Link } from "react-router-dom";
-import MovieContainer from "./MovieContainer";
-import { ThemeContextConsumer } from "./themeContext";
+import React from "react"
+import { BiPlusCircle } from "react-icons/bi"
+import { Link } from "react-router-dom"
+import MovieContainer from "./MovieContainer"
+import { ThemeContextConsumer } from "../themeContext"
 
 function Wishlist() {
   return (
@@ -36,4 +36,4 @@ function Wishlist() {
   );
 }
 
-export default Wishlist;
+export default Wishlist

@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { ThemeContextConsumer } from "./themeContext";
+import React from "react"
+import { Link } from "react-router-dom"
+import { ThemeContextConsumer } from "../themeContext"
 
 function Header() {
   return (
@@ -33,4 +33,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Header

@@ -1,8 +1,8 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
-import Movies from './components/Movies';
-import Wishlist from './components/Wishlist';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Header from './components/Header'
+import Movies from './components/Movies'
+import Wishlist from './components/Wishlist'
+import './App.css'
 
 function App() {
  
